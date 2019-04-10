@@ -1,0 +1,7 @@
+body {
+    /* background-color: silver; */
+}
+video {
+    border: 2px solid red;
+    max-width: 100%;
+}
