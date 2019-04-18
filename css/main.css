@@ -1,7 +1,48 @@
+* {
+    box-sizing: border-box;
+}
 body {
-    padding: 6px;
+    padding: 12px 6px;
 }
 video {
-    border: 2px solid red;
+    border: 1px solid red;
     max-width: 100%;
+}
+.video-box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.video-local {
+    border-color: red;
+    background-color: silver;
+}
+.video-remote {
+    border-color: blue;
+    left: auto;
+    top: 10px;
+    right: 10px;
+    width: 120px;
+    height: 180px;
+    z-index: 1001;
+    background-color: whitesmoke;
+}
+.buttons-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    z-index: 200;
+    border: 1px solid black;
+}
+.peer .video-local {
+    border-color: blueviolet;
+}
+.peer .video-remote {
+    border-color: teal;
 }

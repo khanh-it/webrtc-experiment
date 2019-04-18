@@ -1,0 +1,32 @@
+<?php
+$cache = '';//
+?>
+<div class="container">
+  <!-- room box -->
+  <div id="room-box" class="clearfix">
+    <form id="room-form">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">Room ID:</span>
+          <input type="text" name="rid" class="form-control input-lg" />
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="text-left col-xs-6">
+            <button id="btn-new-room" class="btn btn-default btn-md">Create new room</button>
+          </div>
+          <div class="text-right col-xs-6">
+            <button id="btn-join-room" class="btn btn-primary btn-md">Join room</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <label>Room list:</label>
+    <div id="room-list" class="clearfix"></div>
+  </div>
+  <!-- .end#room box -->
+</div>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="js/inc.specs.js?<?php echo $cache; ?>"></script>
+<script src="js/home.js?<?php echo $cache; ?>"></script>

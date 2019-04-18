@@ -151,6 +151,9 @@ class WRTC
                 'answer' => null,
                 'iceCandidates' => array(),
                 'peers' => array(),
+                'events' => array(
+                    'createdAnswer' => array()
+                ),
             );
         }
     }
@@ -202,13 +205,11 @@ class WRTC
 
     public function wrtcGetIceCandidates()
     {
-        $peerId = $_REQUEST['pid'];
-        $peerId = is_null($peerId) ? $peerId : trim(strip_tags($peerId));
         $iceCandidates = array();
         $_iceCandidates =& $this->roomFileData['iceCandidates'];
         foreach ($_iceCandidates as $_peerId => $_iceCandidateArr) {
-            if (!is_null($peerId) && ($_peerId == $peerId)) {
-                // @TODO: continue;
+            if ($_peerId == $this->peerId) {
+                continue;
             }
             $iceCandidates = array_merge($iceCandidates, $_iceCandidateArr);
         }
@@ -224,6 +225,7 @@ class WRTC
             return static::resErr('Missing answer (description)...');
         }
         $this->roomFileData['answer'] = $description;
+        $this->roomFileData['events']['createdAnswer'][$this->peerId] = $description;
         return static::resOK(array(
             'answer' => $description
         ));
@@ -233,6 +235,14 @@ class WRTC
     {
         return static::resOK(array(
             'description' => $this->roomFileData['answer']
+        ));
+    }
+
+    public function wrtcGetEvents()
+    {
+        $events =& $this->roomFileData['events'];
+        return static::resOK(array(
+            'events' => $events
         ));
     }
 

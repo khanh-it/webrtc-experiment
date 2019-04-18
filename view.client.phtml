@@ -1,0 +1,22 @@
+<?php
+$cache = '';//
+?>
+<div class="clearfix client">
+  <!-- communication box -->
+  <video id="localVideo" class="video-box video-local" autoplay playsinline></video>
+  <video id="remoteVideo" class="video-box video-remote" autoplay playsinline></video>
+  <!-- .end#communication box -->
+  <!-- buttons box -->
+  <div class="buttons-box col-xs-12">
+    <!--<button id="startButton" class="btn btn-default">Start</button>-->
+    <!--<button id="callButton" disabled="disabled" class="btn btn-default">Call</button>-->
+    <button id="getAnswerButton" class="btn btn-primary">Get answer</button>
+    <button id="fetchIceCandidatesButton" class="btn btn-success">Fetch IceCandidates</button>
+    <button id="hangupButton" class="btn btn-default">Get stats</button>
+  </div>
+  <!-- .end#buttons box -->
+</div>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="js/inc.specs.js?<?php echo $cache; ?>"></script>
+<script src="js/client.js?<?php echo $cache; ?>"></script>
